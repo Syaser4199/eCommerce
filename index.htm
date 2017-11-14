@@ -1,0 +1,212 @@
+<HTML>
+
+    <head>
+        <title> The Local Pharma</title>
+
+        <style>
+    
+    
+       
+        </style>
+
+       <HTML>
+
+    <head>
+        <title> My First Web page </title>
+
+        <style>
+            body{
+                background-color: #f9e8d2
+            }
+        img { 
+            width: 300px
+        }
+  
+    
+       
+        </style>
+
+
+        <script>
+    
+       /* CheckList 
+       Elements 
+       wholesale and retail prices
+       quantities 
+       Customer Subtotal- How much the customer has to pay
+       Company subtotal- How much the company has to pay in order to produce goods
+       Sales tax total 
+       Profit 
+       Shipping 
+       total items sold
+       Display
+       */
+               //Read more variable and definition 
+          function Readmore1(){
+            var output1=document.getElementById("Readmorediv1");
+            output1.innerHTML= " PERSCRIPTION REQUIRED <br> -->Moderately addictive with a high potential for abuse <br> -->Low toxicity <br> -->Potentially lethal when mixed with depressants like alcohol or benzodiazepines <br>";
+          }
+         function Readmore2(){
+            var output2=document.getElementById("Readmorediv2");
+            output2.innerHTML= "  PERSCRIPTION REQUIRED <br> -->Not habit-forming <br> --> Extremely low toxicity <br> --> Cross-tolerance with no other psychedelics";
+              
+            
+          }
+          function Readmore3(){
+            var output3=document.getElementById("Readmorediv3");
+            output3.innerHTML= " Over the Counter <br> --> Full tolerance is reached develops with prolonged and repeated use <br> --> Decreases to half after 3 - 7 days <br> --> Returns to baseline after 1 - 2 weeks <br> --> Cross-tolerance with all dissociatives <br>";
+          }
+          function Readmore4(){
+            var output4=document.getElementById("Readmorediv4");
+            output4.innerHTML= "https://psychonautwiki.org/wiki/Oxycodone/Summary, <br> https://psychonautwiki.org/wiki/DXM/Summary,<br> https://psychonautwiki.org/wiki/DMT/Summary";
+          }
+          function processorders(){
+
+           
+
+
+          
+        
+        
+           
+         
+            
+
+
+            /*
+            [VARIABLES-Just acknowledgement/creation of them]
+            */
+            
+            var quantity1=parseFloat( document.getElementById("quantity1").value );
+            var quantity1=parseFloat( document.getElementById("quantity2").value );
+            var quantity1=parseFloat( document.getElementById("quantity3").value );
+            //prices 1,2, and 3 represent retail prices
+            var price1=52.45; 
+            var wholesale1=30.22;
+            var price2=20.99; 
+            var wholesale2=15.99;
+            var price3=17.89;  
+            var wholesale3=15;
+            //Mostly where the calculation takes place- Refer to checklist
+            var customer_subtotal1=(price1*quantity1)+(price2*quantity2)+(price3*quantity3);
+            var customer_subtotal2=customer_subtotal1+tax+shipping;
+            var company_subtotal=(wholesale1*quantity1)+(wholesale2*quantity2)+(wholesale3*quantity3);
+            var profit= (customer_subtotal2-company_subtotal);
+            //tax is 8.75% and refers to the amount of money the tax is  NOT how much the  
+            var tax=(customer_subtotal1*0.0875);
+            var shipping;
+            var totalitemsold=(quantity1+quantity2+quantity3);
+            /*
+            
+            [DECISIONS for Shipping- where if and else if statements take place; two sets of them required-belongs to Output  div]
+            */
+             if(customer_subtotal1>=200) {
+                    shipping=0;
+                    
+            }else if(customer_subtotal1>=100 && customersubtotal1>200 ) {
+                    shipping=10;
+                    
+             }else{
+                 (customer_subtotal1<100) }
+                    shipping=25;
+                
+          
+                    // Build variable
+            var output=document.getElementById("output");
+            var build="";
+            build+="<br>";
+            build+=" CUSTOMER SUBTOTAL:$ "+ customer_subtotal1;
+            build+="<br>";
+            build+=" TOTAL TAX: "+ tax;
+            build+="<br>";
+            build+="SHIPPING PRICE:$ "+ shipping;
+            build+="<br>";
+            build+=" TOTAL: "+ customer_subtotal2;
+            build+="<br>";
+            build+="---------------------------------";
+            build+="<br>";
+            build+=" CUSTOMER SUBTOTAL: "+ customer_subtotal2;
+            build+="<br>";
+            build+=" COMPANY SUBTOTAL "+ company_subtotal;
+            build+="<br>";
+            build+=" PROFIT "+ profit;
+            output.innerHTML=build;
+             
+             
+            
+             
+             
+             
+          } 
+             
+             
+             
+              
+        
+        
+       
+       
+         
+        
+    
+        </script>
+    
+    </head>
+
+    <body>
+        <header> The Big Pharma: </header> 
+         <h5>  ̶A̶ ̶f̶a̶m̶i̶l̶y̶ ̶C̶o̶m̶p̶a̶n̶y̶ </h5> <br>
+         <div id= "Oxy"> </div> 
+         
+             
+             <img src=" images.jpg " >  
+             <p>  <font color="red"> High Purity  </font> Perscription Oxycodone 30mg </p>  
+             
+                
+                <button onclick="Readmore1()"><p>  <font color="peach"> READ MORE  </font> </p>  </button> 
+                <br> <br>
+                <span id= "span1"> <font color="red"> Price:  </font> $52.45....</span>  <br>
+                <input id = "quantity1" type = "text" placeholder = "Enter Quantity"> <div>
+                <br> 
+                <!-- Read More button &  divs 
+                Used to assign output variables-->
+                 <div id="Readmorediv1"> </div>
+          
+               
+                
+             
+        
+
+             <div id= "DMT"> </div>
+             <img src=" images2.jpg ">  
+             <p>  <font color="turquoise"> BreakThrough Doses! Recrystalized  </font> N-Dimethyltryptamine 200 mg</p> <br> 
+             <button onclick="Readmore2()"><p>  <font color="peach"> READ MORE  </font> </p>  </button> 
+             <br> <br>
+             <span id= "span1"> <font color="red"> Price:  </font> $20.99....</span>  <br>
+             <input id = "quantity2" type = "text" placeholder = "Enter Quantity"> <div>
+             <br> 
+              <div id="Readmorediv2"> </div>
+          <div> 
+
+          <div id= "cough"> </div>
+             
+             <img src=" images3.jpg " >  
+             <p>  <font color="maroon"> Adult COUGH Syrup   </font> CVS brand OTC Dextromethorphan</p> <br> 
+             <button onclick="Readmore3()"><p>  <font color="peach"> READ MORE  </font> </p>  </button> 
+             <br> <br>
+             <span id= "span1"> <font color="red"> Price:  </font> $17.89....</span>  <br>
+             <input id = "quantity3" type = "text" placeholder = "Enter Quantity"> <div>
+             <br> 
+              <div id="Readmorediv3"> </div>
+               
+         <button onclick ="processorders()"> Process Order </button> 
+         <br> <br>
+         <div id = "output"> </div>
+        <button onclick="Readmore4()"><p>  <font color="peach"> SOURCES  </font> </p>  </button>
+        <div id="Readmorediv4"> </div>
+        
+
+
+    </body>
+
+</HTML>
